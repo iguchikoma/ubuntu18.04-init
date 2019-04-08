@@ -5,9 +5,6 @@ set -uvx
 # Ref: https://qiita.com/noraworld/items/8546c44d1ec6d739493f
 function setup-git() {
 
-  apt-get install -y git
-  git --version
-
   ls ~/.git-prompt.sh ||\
   ( wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh &&\
   mv git-prompt.sh ~/.git-prompt.sh )
