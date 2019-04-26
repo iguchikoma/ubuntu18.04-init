@@ -1,6 +1,18 @@
 #!/bin/bash
 set -uvx
 
+# Setup screen
+# Memo: For useful management, install screen
+function setup-screen() {
+
+  ls ~/.screenrc ||\
+  git clone https://github.com/iguchikoma/screen.git ~/screen
+  mv ~/screen/.screen* ~/
+  rm -rf ~/screen
+
+}
+
+
 # Setup git
 # Ref: https://qiita.com/noraworld/items/8546c44d1ec6d739493f
 function setup-git() {
@@ -163,6 +175,7 @@ function setup-non-sudo-docker(){
 function main() {
   : "Start to configure ubuntu18.04"
 
+  setup-screen
   setup-git
   setup-ls-color
   setup-bash-profile
