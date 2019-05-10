@@ -171,6 +171,20 @@ function setup-non-sudo-docker(){
 
 }
 
+# Setup nodejs and npm
+# ref: https://qiita.com/_takeshi_24/items/224d00e5a026dbb76716
+function setup-nodejs(){
+
+  sudo apt-get update
+  sudo apt-get install -y nodejs
+  sudo apt-get install -y npm
+  sudo npm cache clean
+  sudo npm install -g n
+  sudo n stable
+  sudo npm update -g npm
+
+}
+
 # Main Function
 function main() {
   : "Start to configure ubuntu18.04"
@@ -185,6 +199,7 @@ function main() {
   setup-docker
   setup-docker-logrotate
   setup-non-sudo-docker
+  setup-nodejs
 
   : "Done for the configuration for ubuntu18.04"
 }
