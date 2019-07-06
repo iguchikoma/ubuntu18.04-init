@@ -10,6 +10,10 @@ function setup-screen() {
   mv ~/screen/.screen* ~/
   rm -rf ~/screen
 
+  # for screen copy to clipboard
+  mkdir ~/screen
+  touch ~/screen/screen-exchange
+
 }
 
 
