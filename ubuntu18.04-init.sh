@@ -11,8 +11,7 @@ function setup-screen() {
   rm -rf ~/screen
 
   # for screen copy to clipboard
-  mkdir ~/screen
-  touch ~/screen/screen-exchange
+  touch ~/.screen-exchange
 
 }
 
