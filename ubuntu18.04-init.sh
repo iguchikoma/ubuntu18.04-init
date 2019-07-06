@@ -174,6 +174,15 @@ function setup-non-sudo-docker(){
 
 }
 
+# Setup Docker compose
+function setup-docker-compose(){
+
+  export compose='1.24.0'
+  sudo curl -L https://github.com/docker/compose/releases/download/${compose}/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  sudo chmod 0755 /usr/local/bin/docker-compose
+
+}
+
 # Setup nodejs and npm
 # ref: https://qiita.com/_takeshi_24/items/224d00e5a026dbb76716
 function setup-nodejs(){
@@ -202,6 +211,7 @@ function main() {
   setup-docker
   setup-docker-logrotate
   setup-non-sudo-docker
+  setup-docker-compose
   setup-nodejs
 
   : "Done for the configuration for ubuntu18.04"
