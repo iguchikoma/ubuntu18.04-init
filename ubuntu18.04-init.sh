@@ -15,6 +15,12 @@ function setup-screen() {
 
 }
 
+# Setup tmux
+# Ref: https://qiita.com/ysuzuki19/items/58cd8ac6a79849308fef
+function setup-tmux() {
+  sudo apt-get update
+  sudo apt-get install -y tmux
+}
 
 # Setup git
 # Ref: https://qiita.com/noraworld/items/8546c44d1ec6d739493f
@@ -202,6 +208,7 @@ function main() {
   : "Start to configure ubuntu18.04"
 
   setup-screen
+  setup-tmux
   setup-git
   setup-ls-color
   setup-bash-profile
