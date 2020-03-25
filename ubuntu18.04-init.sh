@@ -22,6 +22,12 @@ function setup-tmux() {
   sudo apt-get install -y tmux
 }
 
+# Setup utility
+function setup-util() {
+  sudo apt-get update
+  sudo apt-get install -y tree
+}
+
 # Setup git
 # Ref: https://qiita.com/noraworld/items/8546c44d1ec6d739493f
 function setup-git() {
@@ -209,6 +215,7 @@ function main() {
 
   setup-screen
   setup-tmux
+  setup-util
   setup-git
   setup-ls-color
   setup-bash-profile
