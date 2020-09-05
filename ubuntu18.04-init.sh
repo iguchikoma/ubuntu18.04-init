@@ -134,6 +134,10 @@ function setup-apt-package() {
   sudo apt-get update
   sudo apt-get -y install build-essential zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev jq
 
+  # for python "ModuleNotFoundError: No module named '_ctypes'" error solution.
+  sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+	libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+	xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 }
 
 # Setup Docker
